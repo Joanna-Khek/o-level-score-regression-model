@@ -46,7 +46,7 @@ To get started with this project, follow these steps:
 **1. Clone the repository:**
    ```bash
    git clone https://github.com/Joanna-Khek/o-level-score-regression-model
-   cd your-repo
+   cd o-level-score-regression-model
    ```
 **2. Build and run docker image**
    ```bash
