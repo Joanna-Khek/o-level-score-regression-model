@@ -1,0 +1,8 @@
+jupyter_notebooks*
+*/env*
+notebooks
+*.env
+*.log
+.git
+.gitignore
+.tox

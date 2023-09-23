@@ -1,0 +1,11 @@
+.tox
+.pytest_cache
+aisg_regression_model.egg-info
+*__pycache__
+env
+data
+notebooks/feature-engineering.ipynb
+notebooks/model-training.ipynb
+notebooks/preprocessors.py
+src/test.ipynb
+src/regression_model/hyperparam/mlruns

@@ -1,0 +1,97 @@
+app:
+  package_name: regression_model
+  training_data_file: score.db
+  pipeline_name: regression_model
+  pipeline_save_file: regression_model_output_v
+
+model:
+  # y feature
+  target: final_test
+
+  # X features
+  features:
+    - index
+    - number_of_siblings
+    - direct_admission
+    - CCA
+    - learning_style
+    - student_id
+    - gender
+    - tuition
+    - n_male
+    - n_female
+    - age
+    - hours_per_week
+    - attendance_rate
+    - sleep_time
+    - wake_time
+    - mode_of_transport
+    - bag_color
+
+  # Set missing value threshold to drop
+  missing_thres: 0.05
+
+  # Set train test split size
+  test_size: 0.2
+
+  # Random seed
+  random_state: 42
+  
+  # To obtain number of sleeping hours
+  sleep_wake_datetime_vars:
+    - wake_time
+    - sleep_time
+
+  # Features to one hot encode
+  encode_vars:
+    - direct_admission
+    - CCA
+    - learning_style
+    - tuition
+
+  # Features that we will exclude from our model
+  features_to_drop:
+    - index
+    - student_id
+    - n_male
+    - n_female
+    - gender
+    - mode_of_transport
+    - bag_color
+    - sleep_time
+    - wake_time
+    - sleep_datetime
+    - wake_datetime
+
+  # Features that contain na
+  remove_row_na_features:
+    - final_test
+    - attendance_rate
+
+  # Features to map
+  cca_mappings:
+    'Sports': 'Yes'
+    'Arts': 'Yes'
+    'Clubs': 'Yes'
+    'None': 'No'
+
+  tuition_mappings:
+    'Y': 'Yes'
+    'Yes': 'Yes'
+    'N': 'No'
+    'No': 'No'
+
+  # Selected model
+  # (reference from model_dispatcher.py)
+  selected_model_name: xgboost
+  
+  # Best params
+  best_params:
+    xgboost:
+      learning_rate: 0.05505313966688742
+      max_depth: 10
+      min_child_weight: 6.0
+      n_estimators: 100
+      reg_alpha: 0.011941071838418188
+      reg_lambda: 7.23485609161834
+      subsample: 0.8495392973707541
