@@ -3,14 +3,12 @@ from setuptools import find_packages, setup
 
 # Package meta-data
 NAME = 'aisg-regression-model'
-DESCRIPTION = 'AI Singapore Ten Year Series Technical Test Practice'
 EMAIL = 'joannakhek@gmail.com'
 AUTHOR = 'Joanna Khek Cuina'
 
     
 setup(
     name=NAME,
-    description=DESCRIPTION,
     author=AUTHOR,
     author_email=EMAIL,
     packages=find_packages(exclude=('tests')),
